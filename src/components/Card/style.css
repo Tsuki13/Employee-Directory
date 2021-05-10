@@ -1,0 +1,26 @@
+.card {
+    width: 33%;
+    height:350px;
+    background-color: olivedrab;
+    margin: 20px;    
+}
+
+.card-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.card-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+#card-info li {
+    list-style-type: none;
+}
