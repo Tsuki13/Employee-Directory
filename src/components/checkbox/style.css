@@ -1,0 +1,22 @@
+#checkBox {
+    padding: 4px 0;
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 24px;
+}
+
+@media only screen and (max-width: 910px) {
+    #checkBox {
+        font-size: 18px !important;
+        width: 30%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    #checkBox {
+        font-size: 16px !important;
+        width: 40%;
+    }
+}

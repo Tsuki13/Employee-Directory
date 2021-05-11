@@ -1,0 +1,5 @@
+.checkbox-wrapper {
+    background: linear-gradient(to right, olivedrab, 50%, white)  ;
+    display: flex;
+    justify-content: center;
+}
