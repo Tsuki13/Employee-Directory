@@ -5,14 +5,16 @@ import Header from "./components/Header";
 import Card from "./components/Card";
 import CardWrapper from "./components/CardWrapper";
 import API from "./components/API";
+import Checkbox from "./components/Checkbox";
+import CheckboxWrapper from "./components/CheckboxWrapper";
 
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      userList: []
-    }
+      userList: [],
+    };
   }
 
   async componentDidMount() {
@@ -26,12 +28,23 @@ class App extends React.Component {
     console.log(userList);
   }
 
+  sortList = () => {
+    const sorted = this.state.userList.sort((a, b) => {
+      if (a.name.last < b.name.last) { return -1; }
+      if (a.name.last > b.name.last) { return 1; }
+      return 0;
+    })
+    this.setState({ userList: sorted })
+  }
 
 
   render() {
     return (
       <Wrapper>
         <Header>Employee Directory</Header>
+        <CheckboxWrapper>
+          <Checkbox checked={this.sortList} />
+        </CheckboxWrapper>
         <CardWrapper>
           {this.state.userList.map(employee => (
             < Card
