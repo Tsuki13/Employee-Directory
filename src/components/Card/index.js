@@ -16,7 +16,7 @@ function Card(props) {
                         {props.email}
                     </li>
                     <li>
-                        {props.phone}
+                        {props.location}
                     </li>
                 </ul>
             </div>
