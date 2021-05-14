@@ -1,0 +1,12 @@
+#filterBox {
+    padding: 4px 0;
+    width: 20%;
+    display: flex;
+    float: right;
+    align-items: center;
+    font-size: 20px;
+}
+
+#filterText {
+    align-items: top;
+}

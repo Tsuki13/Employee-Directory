@@ -7,6 +7,7 @@ import CardWrapper from "./components/CardWrapper";
 import API from "./components/API";
 import Checkbox from "./components/Checkbox";
 import CheckboxWrapper from "./components/CheckboxWrapper";
+import FormFilter from "./components/FormFilter";
 
 
 class App extends React.Component {
@@ -37,6 +38,16 @@ class App extends React.Component {
     this.setState({ userList: sorted })
   }
 
+  filterList = (value) => {
+    const users = this.state.userList;
+    const filteredList = users.filter(user => {
+      if (user.location.country.toLowerCase().includes(value))
+        return true;
+      else { return false }
+    });
+    this.setState({ userList: filteredList })
+  }
+
 
   render() {
     return (
@@ -44,6 +55,7 @@ class App extends React.Component {
         <Header>Employee Directory</Header>
         <CheckboxWrapper>
           <Checkbox checked={this.sortList} />
+          <FormFilter filterList={this.filterList} />
         </CheckboxWrapper>
         <CardWrapper>
           {this.state.userList.map(employee => (
@@ -52,7 +64,7 @@ class App extends React.Component {
               name={`${employee.name.title} ${employee.name.first} ${employee.name.last}`}
               src={employee.picture.large}
               email={employee.email}
-              phone={employee.phone}
+              location={employee.location.country}
             />
           ))}
         </CardWrapper>
