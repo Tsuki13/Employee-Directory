@@ -29,7 +29,7 @@
 
   ## Preview
 
-  Link to deployed App: 
+  Link to deployed App: https://tsuki13.github.io/Employee-Directory/
 
   Preview of Home Page <br>
   ![Preview](./public/preview.png)
